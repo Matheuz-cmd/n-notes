@@ -1,50 +1,51 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: 1.0.0 (initial)
+- List of modified principles:
+  - I. Modern Full-Stack Architecture (New)
+  - II. Supabase Primary Backend (New)
+  - III. Clear Separation of Concerns (New)
+  - IV. API-Centric Design (New)
+  - V. Future-Proof Backend Architecture (New)
+  - VI. Clean & Modular Code / Incremental Development (New)
+- Added sections: Core Principles, Architecture Constraints, Development Workflow, Governance
+- Removed sections: N/A
+- Templates requiring updates: ✅ Verified (None pending)
+- Follow-up TODOs: None
+-->
+
+# Personal Book Tracker Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Modern Full-Stack Architecture
+The application MUST be built using a modern full-stack framework. The user interface MUST prioritize reactive updates and clean UI/UX, ensuring a seamless experience for end users.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Supabase Primary Backend
+The system MUST use Supabase as the primary backend for database, authentication, and core services. This ensures rapid delivery and robust data integrity.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Clear Separation of Concerns
+The codebase MUST strictly delineate UI components, business logic, data access, and API interfacing layers. Mixing these concerns within a single file or component is PROHIBITED.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. API-Centric Design
+The UI MUST interact with the backend purely via an API-centric abstraction/adapter layer. Direct database queries from generic UI components are PROHIBITED.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Future-Proof Backend Architecture
+The code MUST be structured to allow the seamless introduction of a dedicated backend layer (e.g., Node, Go, or Python) in the future. Migration should require changes ONLY in the abstraction/adapter layer, with zero major UI refactoring.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### VI. Clean & Modular Code / Incremental Development
+Features MUST be developed incrementally. The codebase MUST maintain tightly scoped and modular implementations that are independently testable and validatable.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Architecture Constraints
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+The project focuses on front-end simplicity backed by BaaS (Backend-as-a-Service) for rapid delivery but rigorously abstracts the BaaS to avoid tight coupling. Any third-party dependencies MUST be evaluated against this abstraction requirement.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Development Workflow
+
+Incremental changes are MANDATORY. Code is to be introduced in small, verifiable increments. Each feature MUST be verified against the core principles before being merged.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+All code contributions MUST verify compliance with the Core Principles. Architecture complexity must be justified. The Constitution supersedes all other practices and unwritten conventions. Code reviews MUST actively guarantee the abstraction between UI code and Supabase SDK logic.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-04-16 | **Last Amended**: 2026-04-16
