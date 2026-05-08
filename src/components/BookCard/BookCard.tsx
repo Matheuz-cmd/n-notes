@@ -93,8 +93,8 @@ export const BookCard: React.FC<BookCardProps> = ({ book }) => {
         </p>
         
         <Tooltip>
-          <TooltipTrigger asChild>
-            <p className="text-xs text-slate-500 mb-5 leading-relaxed line-clamp-2 min-h-[40px] cursor-help text-left">
+          <TooltipTrigger className="text-left">
+            <p className="text-xs text-slate-500 mb-5 leading-relaxed line-clamp-2 min-h-[40px] cursor-help">
               {book.description || 'Um dos livros mais fáceis de se recomendar. Todo dev deveria ler.'}
             </p>
           </TooltipTrigger>
