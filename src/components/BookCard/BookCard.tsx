@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { Book } from '../../types/book';
 import { Star, StarHalf } from 'lucide-react';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface BookCardProps {
   book: Book;
@@ -87,9 +92,16 @@ export const BookCard: React.FC<BookCardProps> = ({ book }) => {
           {book.author}
         </p>
         
-        <p className="text-xs text-slate-500 mb-5 leading-relaxed line-clamp-2 min-h-[40px]">
-          {book.description || 'Um dos livros mais fáceis de se recomendar. Todo dev deveria ler.'}
-        </p>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <p className="text-xs text-slate-500 mb-5 leading-relaxed line-clamp-2 min-h-[40px] cursor-help text-left">
+              {book.description || 'Um dos livros mais fáceis de se recomendar. Todo dev deveria ler.'}
+            </p>
+          </TooltipTrigger>
+          <TooltipContent side="top" className="max-w-[300px] text-xs p-3">
+            <p>{book.description || 'Um dos livros mais fáceis de se recomendar. Todo dev deveria ler.'}</p>
+          </TooltipContent>
+        </Tooltip>
         
         <button 
            className="mt-auto w-full bg-slate-900 hover:bg-black text-white font-semibold flex items-center justify-center cursor-pointer gap-2 py-2.5 px-4 rounded-lg transition-colors duration-200 text-sm"
